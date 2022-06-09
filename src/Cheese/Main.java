@@ -25,10 +25,15 @@ public class Main {
          ListaProductos lista = new ListaProductos("LISTACOMPRA");
          Producto producto1 = new Producto( "0001","Lacteo", 2, 10);
          Producto producto2 = new Producto( "0002","Congelado", 5, 5);
+         Producto producto3 = new Producto("0003","Drogueria", 1, 2);
+         
          lista.registraProducto(producto1);
          lista.registraProducto(producto2);
+         lista.registraProducto(producto3);
+        
          producto1.imprime_etiqueta();
          producto2.imprime_etiqueta();
+         producto3.imprime_etiqueta();
          
 
      }
