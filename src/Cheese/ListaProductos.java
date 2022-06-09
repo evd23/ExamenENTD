@@ -49,7 +49,13 @@ public class ListaProductos {
     
         if ((campo.replace(" ","").isEmpty()) || (campo == null))  return true; else return false;
     }
-
+/**
+ * El metodo recibe un String, y con un if llamamos al metodo parametro_vacio
+ * en el caso de que el String nombre sea null el nombre del elemento se pone por defecto "noNamed"
+ * mientras que en el caso de que no sea nulo se le aplica el nombre recibido
+ * @param nombre nombre de la lista de productos
+ * 
+ */
     public ListaProductos(String nombre) {
     	if (parametro_vacio(nombre)) {
     		this.nombreLista = "noNamed";
@@ -58,10 +64,23 @@ public class ListaProductos {
     	this.nombreLista = nombre;
     	}
     }
+    
+    
+   /**
+    * El metodo devuelve el numero de productos que hay
+    * @return int 
+    */
     public int totalProductos(){
             return this.getNumProductos();
     }
-        
+    
+    
+    /**
+     * El metodo comprueba si en la lista ya esta ese producto, si esta devuelve null, 
+     * si no añade a la lista el codigo del producto y su nombre.
+     * @param prod nombre del producto
+     * @return True: null, False: prod
+     */
     public Producto registraProducto(Producto prod) {
         
         if (listaP.containsKey(prod.getcode())) {
@@ -72,7 +91,13 @@ public class ListaProductos {
         this.setNumProductos(n);
         return prod;
     }
-
+    
+	/**
+	 * Este metodo sirve para eliminar productos por su codigo
+	 * si el producto existe, este se borra y se descuenta de la lista.
+	 * @param codigo es el codigo del producto
+	 * @return prod
+	 */
     public Producto descartaProducto(String codigo) { 
         
         Producto prod = encuentraProducto(codigo);
@@ -83,6 +108,12 @@ public class ListaProductos {
         }
         return prod;
     }
+    
+   /**
+    * Sirve para encontrar productos por su codigo
+    * @param codigo es el codigo del producto
+    * @return hashmap 
+    */
 
     public Producto encuentraProducto(String codigo) { 
         Producto prod = null;
@@ -96,7 +127,7 @@ public class ListaProductos {
     }
 /**
  * Devuelve un array con los productos registrados en la lista
- * @return array de productos
+ * @return array de productos 
  */
     public ArrayList<Producto> recuperaProductos() {
         ArrayList<Producto> prodsList = new ArrayList<>();
