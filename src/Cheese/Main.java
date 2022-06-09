@@ -6,6 +6,8 @@
  */
 package Cheese;
 
+
+
 /**
  * Clase main del examen
  * @author ___
@@ -19,6 +21,15 @@ public class Main {
      public static void main(String[] args) {
     
          System.out.println("1º Gdam: Entornos de desarrollo");
+         
+         ListaProductos lista = new ListaProductos("LISTACOMPRA");
+         Producto producto1 = new Producto( "0001","Lacteo", 2, 10);
+         Producto producto2 = new Producto( "0002","Congelado", 5, 5);
+         lista.registraProducto(producto1);
+         lista.registraProducto(producto2);
+         producto1.imprime_etiqueta();
+         producto2.imprime_etiqueta();
+         
 
      }
 }
