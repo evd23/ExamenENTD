@@ -1,8 +1,8 @@
 /*
-*	grupo  :
-*	alumno :
-*	n.exp. :
-*	fecha  :
+*	grupo  : 1º GDAM
+*	alumno : Elias Valiente
+*	n.exp. : 7262
+*	fecha  : 9/06/2022
  */
 package Cheese;
 
